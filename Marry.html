@@ -8177,8 +8177,32 @@
         }
       })();
     </script>
+    <link rel="stylesheet" href="curtain.css" />
   </head>
   <body ontouchstart>
+    <!-- Opening curtain overlay (copy-paste-friendly) -->
+    <div id="curtain-overlay" aria-hidden="false">
+      <div class="curtain-panel curtain-left" aria-hidden="true"></div>
+      <div class="curtain-panel curtain-right" aria-hidden="true"></div>
+
+      <!-- Emblem split into two halves so it can move with each curtain -->
+      <div class="emblem" aria-hidden="true">囍</div>
+
+      <!-- Center message split into left/right halves so they move with curtains -->
+      <div class="curtain-center-text" role="button" tabindex="0"> 
+        <span class="text-split" aria-hidden="false">
+          <span class="text-half left">Nhấn để mở lễ hỷ</span>
+          <span class="text-half right">Nhấn để mở lễ hỷ</span>
+        </span>
+      </div>
+
+      <!-- Visual clone of music toggle inside overlay so it can animate (real control remains in page) -->
+      <div class="overlay-music-clone" aria-hidden="true">
+        <img class="clone-play" src="https://content.pancake.vn/1/02/d4/a7/88/fef5132f979892c1778a688f2039942fc24b396b332750179775f87e-w:200-h:200-l:8183-t:image/png.png" alt="" width="44" height="44">
+        <img class="clone-pause" src="https://content.pancake.vn/1/31/08/c9/52/c9f574ca2fa8481e1c8c657100583ddfbf47e33427d480a7dc32e788-w:200-h:200-l:242141-t:image/gif.gif" alt="" width="44" height="44" style="display:none">
+      </div>
+    </div>
+    <!-- /Opening curtain overlay -->
     <div class="pageview">
       <div
         id="webcake-alert-msg"
@@ -12530,5 +12554,6 @@
         });
       })();
     </script>
+    <script defer src="curtain.js"></script>
   </body>
 </html>
